@@ -1,0 +1,15 @@
+.container {
+  width: 100%;
+  max-width: 990px;
+  margin: 0 auto;
+
+  @include max-l {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.container-with-header {
+  height: calc(100vh - 55px);
+  background: $gray-6;
+}

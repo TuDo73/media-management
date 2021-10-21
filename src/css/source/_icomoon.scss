@@ -1,0 +1,73 @@
+@font-face {
+  font-family: "icon";
+  src: url(#{$urlFont}/Icomoon/icomoon.eot?56i5c8);
+  src: url(#{$urlFont}/Icomoon/icomoon.eot?56i5c8#iefix)
+      format("embedded-opentype"),
+    url(#{$urlFont}/Icomoon/icomoon.ttf?56i5c8) format("truetype"),
+    url(#{$urlFont}/Icomoon/icomoon.woff?56i5c8) format("woff"),
+    url(#{$urlFont}/Icomoon/icomoon.woff2?56i5c8) format("woff"),
+    url(#{$urlFont}/Icomoon/icomoon.svg?56i5c8#icon) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+%icon,
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icon" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  // color: $dark;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-view_module:before {
+  content: "\e905";
+}
+.icon-dots-three-horizontal:before {
+  content: "\e904";
+}
+.icon-triangle-up:before {
+  content: "\e900";
+}
+.icon-triangle-right:before {
+  content: "\e901";
+}
+.icon-triangle-left:before {
+  content: "\e902";
+}
+.icon-triangle-down:before {
+  content: "\e903";
+}
+.icon-image:before {
+  content: "\e90d";
+}
+.icon-file-empty:before {
+  content: "\e924";
+}
+.icon-folder:before {
+  content: "\e92f";
+}
+.icon-search:before {
+  content: "\e986";
+}
+.icon-bin:before {
+  content: "\e9ac";
+}
+.icon-plus:before {
+  content: "\ea0a";
+}
+.icon-info:before {
+  content: "\ea0c";
+}
+.icon-cross:before {
+  content: "\ea0f";
+}
