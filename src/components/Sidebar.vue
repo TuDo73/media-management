@@ -34,10 +34,9 @@
             </div>
           </div>
         </div>
-        <li v-for="(menu, index) in allFolder" :key="menu.id" class="list-item">
+        <li v-for="menu in allFolder" :key="menu.id" class="list-item">
           <div class="sub-sidebar folder-sidebar">
             <h3 class="sub-sidebar-heading">Create</h3>
-            <!-- <h5 class="sub-sidebar-subheading">Create an item</h5> -->
             <div class="sub-sidebar-content">
               <div class="button-box">
                 <span class="button-box-icon icon-file-empty"></span>
@@ -56,16 +55,6 @@
                 <span class="button-box-icon icon-folder"></span>
                 <span class="btn-text">Folder</span>
               </div>
-              <!-- <div class="button-box">
-                <span class="button-box-icon icon-image"></span>
-                <span class="btn-text">Image</span>
-                <input
-                  type="file"
-                  @change="uploadFile($event, menu.id)"
-                  multiple
-                  class="file-input"
-                />
-              </div> -->
               <div class="button-box" @click="deleteFolder(menu.id)">
                 <span class="button-box-icon icon-cross"></span>
                 <span class="btn-text">Delete</span>
@@ -99,13 +88,12 @@
             v-if="menu.subfolder.length > 0 || enableNewSubFolder.enable"
           >
             <li
-              v-for="(subMenu, indexSub) in menu.subfolder"
+              v-for="subMenu in menu.subfolder"
               :key="subMenu.id"
               class="list-item child-item"
             >
               <div class="sub-sidebar folder-sidebar">
                 <h3 class="sub-sidebar-heading">Create</h3>
-                <!-- <h5 class="sub-sidebar-subheading">Create an item</h5> -->
                 <div class="sub-sidebar-content">
                   <div class="button-box">
                     <span class="button-box-icon icon-file-empty"></span>
@@ -124,16 +112,6 @@
                     <span class="button-box-icon icon-folder"></span>
                     <span class="btn-text">Folder</span>
                   </div>
-                  <!-- <div class="button-box">
-                    <span class="button-box-icon icon-image"></span>
-                    <span class="btn-text">Image</span>
-                    <input
-                      type="file"
-                      @change="uploadFile($event, subMenu.id)"
-                      multiple
-                      class="file-input"
-                    />
-                  </div> -->
                   <div class="button-box" @click="deleteFolder(subMenu.id)">
                     <span class="button-box-icon icon-cross"></span>
                     <span class="btn-text">Delete</span>
@@ -166,13 +144,12 @@
                 v-if="subMenu.subfolder.length > 0 || enableNewSubFolder.enable"
               >
                 <li
-                  v-for="(subMenuLv1, indexSubMenuLv1) in subMenu.subfolder"
+                  v-for="subMenuLv1 in subMenu.subfolder"
                   :key="subMenuLv1.id"
                   class="list-item child-item"
                 >
                   <div class="sub-sidebar folder-sidebar">
                     <h3 class="sub-sidebar-heading">Create</h3>
-                    <!-- <h5 class="sub-sidebar-subheading">Create an item</h5> -->
                     <div class="sub-sidebar-content">
                       <div class="button-box">
                         <span class="button-box-icon icon-file-empty"></span>
@@ -184,23 +161,6 @@
                           class="file-input"
                         />
                       </div>
-                      <!-- <div
-                        class="button-box"
-                        @click="handleClickCreateSubFolder(subMenuLv1.id)"
-                      >
-                        <span class="button-box-icon icon-folder"></span>
-                        <span class="btn-text">Folder</span>
-                      </div> -->
-                      <!-- <div class="button-box">
-                        <span class="button-box-icon icon-image"></span>
-                        <span class="btn-text">Image</span>
-                        <input
-                          type="file"
-                          @change="uploadFile($event, subMenuLv1.id)"
-                          multiple
-                          class="file-input"
-                        />
-                      </div> -->
                       <div
                         class="button-box"
                         @click="deleteFolder(subMenuLv1.id)"
@@ -235,44 +195,11 @@
                   </div>
                   <ul class="child-list" v-if="subMenuLv1.subfolder.length > 0">
                     <li
-                      v-for="(subMenuLv2,
-                      indexSubMenuLv2) in subMenuLv1.subfolder"
+                      v-for="subMenuLv2 in subMenuLv1.subfolder"
                       :key="subMenuLv2.id"
                       class="list-item child-item"
-                    >
-                      <!-- <div
-                        class="item-title img-title"
-                        v-if="subMenuLv2.type === 'file'"
-                        @click="handleClickFile($event)"
-                      >
-                        <span class="icon-image"></span>
-                        <span class="text-title">
-                          {{ subMenuLv2.name }}
-                        </span>
-                        <div
-                          class="action-btn img-action"
-                          @click.stop="handleFileActionButton($event)"
-                        ></div>
-                        <div class="overlay"></div>
-                      </div> -->
-                    </li>
+                    ></li>
                   </ul>
-
-                  <!-- <div
-                    class="item-title img-title"
-                    v-if="subMenuLv1.type === 'file'"
-                    @click="handleClickFile($event)"
-                  >
-                    <span class="icon-image"></span>
-                    <span class="text-title">
-                      {{ subMenuLv1.name }}
-                    </span>
-                    <div
-                      class="action-btn img-action"
-                      @click.stop="handleFileActionButton($event)"
-                    ></div>
-                    <div class="overlay"></div>
-                  </div> -->
                 </li>
                 <div
                   class="list-item child-item new-folder"
@@ -296,22 +223,6 @@
                   </div>
                 </div>
               </ul>
-
-              <!-- <div
-                class="item-title img-title"
-                v-if="subMenu.type === 'file'"
-                @click="handleClickFile($event)"
-              >
-                <span class="icon-image"></span>
-                <span class="text-title">
-                  {{ subMenu.name }}
-                </span>
-                <div
-                  class="action-btn img-action"
-                  @click.stop="handleFileActionButton($event)"
-                ></div>
-                <div class="overlay"></div>
-              </div> -->
             </li>
             <div
               class="list-item child-item new-folder"
@@ -335,22 +246,6 @@
               </div>
             </div>
           </ul>
-
-          <!-- <div
-            class="item-title img-title"
-            v-if="menu.type === 'file'"
-            @click="handleClickFile($event)"
-          >
-            <span class="icon-image"></span>
-            <span class="text-title">
-              {{ menu.name }}
-            </span>
-            <div
-              class="action-btn img-action"
-              @click.stop="handleFileActionButton($event)"
-            ></div>
-            <div class="overlay"></div>
-          </div> -->
         </li>
       </ul>
     </div>
@@ -377,7 +272,6 @@ export default {
 
   data() {
     return {
-      // menuSidebar: [],
       newFolderName: "",
       newSubFolderName: "",
       idSubFolder: 0,
@@ -401,13 +295,9 @@ export default {
 
   methods: {
     getAllData() {
-      System.getAll()
-        // .then((response) => {
-        //   this.menuSidebar = response;
-        // })
-        .then(() => {
-          this.checkChildListOpenState();
-        });
+      System.getAll().then(() => {
+        this.checkChildListOpenState();
+      });
     },
 
     handleMainActionButton(e) {

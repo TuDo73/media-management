@@ -9,10 +9,8 @@ export default {
       const response = await Api().get(`${url}`);
       let allFolder = response.data.Data;
       store.commit("sidebar/setAllFolder", allFolder);
-      // console.log(response);
       return response;
     } catch (error) {
-      // console.log("error:", error.response);
       return error.response;
     }
   },
@@ -21,7 +19,6 @@ export default {
     const url = `${global_api}/api/media/${folderId}`;
     const response = await Api().get(`${url}`);
     let files = response.data.Data;
-    // console.log(files);
     return files;
   },
 
@@ -29,7 +26,6 @@ export default {
     const url = `${global_api}/api/folders`;
     const createFolderResp = await Api().post(`${url}`, folder);
 
-    // console.log(createFolderResp);
     return createFolderResp;
   },
 
@@ -44,7 +40,6 @@ export default {
     const url = `${global_api}/api/uploads`;
     const uploadFileRes = await Api().post(`${url}`, file);
 
-    // console.log(uploadFileRes);
     return uploadFileRes;
   },
 
@@ -74,7 +69,6 @@ export default {
     const response = await Api().get(`${url}`);
     let searchItem = response.data.Data;
     store.dispatch("sidebar/setSearchItem", searchItem);
-    // console.log(value);
     return response;
   },
 };

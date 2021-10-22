@@ -9,13 +9,11 @@
   </div>
 </template>
 <script>
-import { globalFunction } from "@/global/global.js";
 import { mapState } from "vuex";
 import Sidebar from "@/components/Sidebar.vue";
 import MainHome from "@/components/MainHome.vue";
 import MainFolder from "@/components/MainFolder.vue";
 import MainFile from "@/components/MainFile.vue";
-import System from "@/services/System";
 
 export default {
   components: {

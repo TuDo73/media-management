@@ -101,7 +101,6 @@ const actions = {
   },
 
   selectFolder({ commit, state, dispatch }, { e, id, folderData }) {
-    // console.log(id);
     let dropdowns = e.target.closest(".list-item");
 
     let folder = dropdowns.querySelector(".folder-title");
@@ -185,22 +184,18 @@ const mutations = {
   // handle response from actions to update state
   setAllFolder(state, allData) {
     state.allFolder = allData;
-    // console.log(state.allFolder);
   },
 
   setFolder(state, data) {
     state.folder = data;
-    // console.log(state.folder);
   },
 
   setFileByFolder(state, data) {
     state.files = data;
-    // console.log(state.files);
   },
 
   setFile(state, data) {
     state.file = data;
-    // console.log(state.file);
   },
 
   setFileUrl(state) {

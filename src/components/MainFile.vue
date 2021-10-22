@@ -11,20 +11,6 @@
           />
         </div>
       </div>
-      <!-- <div class="img-page-top-right">
-        <div class="tab-button tab-content active">
-          <span class="icon-file-empty"></span>
-          <span class="tab-text">Content</span>
-        </div>
-        <div class="tab-button tab-info">
-          <span class="icon-info"></span>
-          <span class="tab-text">Info</span>
-        </div>
-        <div class="tab-button action-button">
-          <span class="tab-text">Action</span>
-          <span class="icon-triangle-down"></span>
-        </div>
-      </div> -->
     </div>
     <div class="main-img-page">
       <div class="property-row">
@@ -103,7 +89,6 @@
   </div>
 </template>
 <script>
-// import { globalFunction } from "@/global/global.js";
 import { mapState } from "vuex";
 import System from "@/services/System";
 import Sidebar from "@/components/Sidebar.vue";

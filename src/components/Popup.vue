@@ -23,7 +23,6 @@
 
 <script>
 import { mapState } from "vuex";
-import { globalFunction } from "@/global/global.js";
 
 export default {
   computed: {

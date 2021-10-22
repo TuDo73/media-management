@@ -8,7 +8,6 @@
           v-model="folder.name"
           ref="fieldChangeName"
         />
-        <!-- <div class="save-btn" @click="updateFolder()">Save</div> -->
       </div>
       <div class="search-box">
         <span class="icon-search" @click="doSearch()"></span>
@@ -33,56 +32,6 @@
     </div>
 
     <div class="overview-block" v-if="!isSearch">
-      <!-- <ul class="file-list">
-        <li v-for="(file, index) in files" :key="index" class="file-list-item">
-          <div
-            class="file-list-item-wrap"
-            v-if="file.type === 'File'"
-            @click="openFileDetails(file)"
-          >
-            <span class="icon-file-empty"></span>
-            <span class="file-text">{{ file.name }}</span>
-            <div
-              class="file-action"
-              @click.stop="handleFileActionBtn($event)"
-            ></div>
-            <div class="sub-sidebar img-sidebar" ref="fileSidebar">
-              <div class="sub-sidebar-content">
-                <div
-                  class="button-box delete-btn"
-                  @click.stop="deleteFile(file.id)"
-                >
-                  <span class="button-box-icon icon-cross"></span>
-                  <span class="btn-text">Delete...</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="file-list-item-wrap"
-            v-if="file.type === 'Image'"
-            @click="openFileDetails(file)"
-          >
-            <span class="icon-image"></span>
-            <span class="file-text">{{ file.name }}</span>
-            <div
-              class="file-action"
-              @click.stop="handleFileActionBtn($event)"
-            ></div>
-            <div class="sub-sidebar img-sidebar" ref="fileSidebar">
-              <div class="sub-sidebar-content">
-                <div
-                  class="button-box delete-btn"
-                  @click.stop="deleteFile(file.id)"
-                >
-                  <span class="button-box-icon icon-cross"></span>
-                  <span class="btn-text">Delete...</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul> -->
       <ul class="file-list file-preview">
         <li
           v-for="(file, index) in files"
@@ -157,10 +106,7 @@ export default {
   },
 
   data() {
-    return {
-      // filesSelected: [],
-      // fileSelectedId: null,
-    };
+    return {};
   },
 
   methods: {
@@ -170,8 +116,6 @@ export default {
 
     selectFile(file) {
       this.$store.dispatch("sidebar/selectFile", file);
-      // this.$store.commit("sidebar/updateDelBtnState", true);
-      // this.fileSelectedId = file.id;
     },
 
     handleFileActionBtn(e) {
@@ -224,13 +168,6 @@ export default {
 
     deleteFile() {
       this.$store.dispatch("sidebar/deleteFile");
-      // this.$store.commit("sidebar/updateDelBtnState", false);
-      // System.deleteFile(this.fileSelectedId).then((response) => {
-      //   System.getFile(this.folder.id).then((res) => {
-      //     this.$store.commit("sidebar/setFileByFolder", res);
-      //     // this.closeAllSubSidebar();
-      //   });
-      // });
     },
 
     updateFolder() {

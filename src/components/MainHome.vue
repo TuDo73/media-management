@@ -34,9 +34,7 @@
   </div>
 </template>
 <script>
-import { globalFunction } from "@/global/global.js";
 import { mapState } from "vuex";
-import System from "@/services/System";
 import OverviewSearch from "@/components/OverviewSearch.vue";
 
 export default {
@@ -48,7 +46,6 @@ export default {
     ...mapState({
       allFolder: (state) => state.sidebar.allFolder,
       isSearch: (state) => state.sidebar.isSearch,
-      // searchValue: (state) => state.sidebar.searchValue,
     }),
     searchValue: {
       get() {
